@@ -1,2 +1,4 @@
 # Image-Colorization-using-cGAN
-This is a project made with the help of Pytorch framework which helps convert grayscale images into its color correspondent.
+Grayscale image colourisation using a conditional GAN(Generative Adversarial Networks) built on PyTorch framework
+
+The generator implemented is based on U-Net Architecture and discriminator implemented is patch discriminator
