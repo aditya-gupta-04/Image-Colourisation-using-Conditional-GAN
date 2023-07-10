@@ -1,4 +1,10 @@
 # Image-Colorization-using-cGAN
 Grayscale image colourisation using a conditional GAN(Generative Adversarial Networks) built on PyTorch framework
 
-The generator implemented is based on U-Net Architecture and discriminator implemented is patch discriminator
+## Dataset 
+The dataset used is the [celebrity faces dataset](https://www.kaggle.com/datasets/jessicali9530/celeba-dataset). This dataset consists of 200,000+ RGB images of size 218x178 pixels. For this project, only a small subset of 10,000 randomly chosen images was used. 80% of this data was used for training the models.
+
+## Preprocessing and LAB colour space
+LAB is a color space just like RGB but here the 3 channels represent Lightness(L), Green-Redness (a) and Yellow-blueness (b) of each pixel. The Lightness(L) channel is effectively a grayscale image.
+
+For this task, I have used LAB colour space instead of RGB colour space as it reduces the number of output channels required for our generator. Instead of using 1 grayscale channel as imput and 3 RGB channels input, we can use the single L channel as input and generate the A and B channels as output, the input L channel and output A,B channels can be used to generate an RGB output. This allows for better image generation and fast training and inference times.
